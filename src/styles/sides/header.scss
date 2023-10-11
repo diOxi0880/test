@@ -1,0 +1,78 @@
+.header_container {
+    @include flex;
+    margin: 23px auto;
+    padding: 0px 28px 0px 25px;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    height: 37px;
+    .burger_for_hidden {
+        @include flex;
+        justify-content: flex-end;
+        .burger_menu {
+            background-color: $bc;
+            height: 37px;
+            box-sizing: border-box;
+        }
+        .burger_list {
+            background-color: $wt;
+            @include hidden;
+            top: 37px;
+            .burger_cell {
+                width: 183px;
+                height: 28px;
+                text-transform: uppercase;
+                @include textstyle(11px, 400, 22px, $ge);
+                list-style-type: none;
+                @include flex;
+                align-items: center;
+                padding: 0px 13px;
+                &:hover {
+                    background-color: $wt3;
+                    transition-delay: 0.1s;
+                }  
+            }
+            .cell__active {
+                color: $bl;
+            }
+        }
+    }
+    .open_menu {
+        @include flex;
+        gap: 34px;
+        @include hidden;
+        .menu_cell {
+            text-transform: uppercase;
+            @include  textstyle(11px, 400, 22px, $ge);
+            list-style-type: none;
+        }
+        .cell__active {
+            color: $bl;
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+	.header_container {	
+        padding: 17px 92px 16px 80px;
+        margin: 23px auto 28px;
+        justify-content: center;
+        .burger_for_hidden {
+            @include hidden;
+            .burger_list {
+                visibility: hidden;
+            }
+        }
+        .open_menu {
+            @include visible;
+        }
+	}
+}
+@media screen and (min-width: 1200px) {
+	.header_container {
+		margin: 29px 215px 34px;
+        padding: 0px;
+        .open_menu {
+            gap: 70px;
+        }
+    }
+}

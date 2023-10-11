@@ -1,0 +1,91 @@
+.content_container {
+    margin: 0px auto;
+    padding: 0px 28px 0px 25px;
+    @include flex;
+    flex-direction: column;
+    gap: 23px;
+    margin-bottom: 43px;
+    .container_for_centering {
+        gap: 23px;
+        @include flex;
+        flex-direction: column;
+        h1 {
+            @include textstyle(14px, 700, 22px, $ge);
+            text-transform: uppercase;
+        }
+        .general_post_flex {
+            @include flex;
+            flex-direction: column;
+            gap: 32px;
+            .post2_flex {
+                @include flex;
+                flex-direction: column;
+                gap: 32px;
+                .post_flex {
+                    @include flex;
+                    flex-direction: column;
+                    gap: 11px;
+                    .post_image {
+                        width: 160px;
+                        height: 140px;
+                    }
+                    .post_description_flex {
+                        @include flex;
+                        flex-direction: column;
+                        gap: 1px;
+                        .post_title {
+                            @include textstyle(16px, 700, 30px, $ge);
+                        }
+                        .post_description {
+                            @include textstyle(12px, 400, 20px, $ge2);
+                        }
+                        .post_paragraph {
+                            @include textstyle(14px, 400, 26px, $ge3);
+                            @include hidden;
+                        }
+                    }
+                }
+                .post__4 {
+                    @include hidden;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 768px) {
+    .content_container {
+        padding: 0px 92px 0px 80px;
+        .container_for_centering {
+            .general_post_flex {
+                .post2_flex {
+                    .post__4 {
+                        @include visible;
+                    }
+                    .post_flex {
+                        flex-direction: row;
+                        gap: 20px;
+                        .post_description_flex {
+                            .post_paragraph {
+                                @include visible;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }   
+}
+
+@media screen and (min-width: 1200px) {
+	.content_container {
+        padding: 0px 215px;
+        align-items: center;
+        justify-content: center;
+        .container_for_centering {
+            .general_post_flex {
+                flex-direction: row;
+            }
+        }
+    }
+
+}

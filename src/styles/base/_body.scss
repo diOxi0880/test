@@ -1,0 +1,38 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+@mixin textstyle ($fs, $fw, $lh, $cl) {
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    color: $cl;
+}
+// @include textstyle(, , , );
+
+@mixin flex {
+    display: flex;
+    box-sizing: border-box;
+}
+// @include flex;
+
+@mixin hidden {
+    visibility: hidden;
+    position: absolute;
+}
+// @include hidden;
+
+@mixin visible {
+    visibility: visible;
+    position: relative;
+}
+// @include visible;
+
+$bc: rgba(0, 0, 0, 1);
+$wt: rgba(245, 245, 245, 1);
+$wt2: rgba(185, 185, 185, 1);
+$wt3: rgba(229, 229, 229, 1);
+$bl: rgba(87, 164, 164, 1);
+$ge: rgba(78, 78, 78, 1);
+$ge2: rgba(124, 124, 124, 1);
+$ge3: rgba(92, 92, 92, 1);
